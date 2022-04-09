@@ -101,7 +101,7 @@ const SectionAmenities = () => {
         {amenityCard("Free car parking", <IconParking />)}
         {amenityCard("Free to use Wi-Fi", <IconWiFi />)}
         {amenityCard("Airport transport", <IconBus />)}
-        {amenityCard("Airconditioner", <IconAirconditioner />)}
+        {amenityCard("Air conditioner", <IconAirconditioner />)}
         {amenityCard("Unbeatable prices", <IconCash />)}
         {amenityCard("Online reservations", <IconReserve />)}
       </div>
