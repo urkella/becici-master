@@ -1,0 +1,99 @@
+.root {
+  /* Layout */
+  display: flex;
+  align-items: center;
+
+  /* Style */
+  background-color: var(--matterColorLight);
+  box-shadow: var(--boxShadow);
+
+  height: var(--topbarHeightDesktop);
+  z-index: 9;
+}
+
+.topbarWrapper {
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex: 1;
+
+  max-width: 1240px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.logoContainer {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: initial;
+    height: 58px;
+  }
+}
+
+.logo {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 2px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: 768px) {
+    justify-content: flex-start;
+    width: auto;
+  }
+}
+
+.navigationItem {
+  /* Layout */
+
+  cursor: pointer;
+
+  /* Font */
+  font-family: var(--fontFamily);
+  font-weight: var(--fontWeightMedium);
+  color: var(--matterColorAnti);
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0;
+
+  & a {
+    position: relative;
+    top: 2px;
+    text-decoration: none;
+    color: var(--matterColor);
+
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+
+    /* Animation */
+    transition: all 0.15s ease-in-out;
+
+    &:hover {
+      border-bottom-color: var(--siteColor);
+      color: var(--siteColor);
+    }
+
+    @media (min-width: 768px) {
+      padding: 25px 24px;
+    }
+  }
+}
+
+.navigationIcon {
+  margin-right: 6px;
+  top: 4px !important;
+}
