@@ -3,6 +3,7 @@ import routeConfiguration from "./routeConfiguration";
 import difference from "lodash/difference";
 import { ScrollToTop } from "./components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { IntlProvider } from "react-intl";
 import config from "./config";
 
@@ -44,21 +45,23 @@ const App = () => {
       messages={messages}
       textComponent="span"
     >
-      <Router>
-        <ScrollToTop>
-          <Routes>
-            {routeConfiguration().map((route) => {
-              return (
-                <Route
-                  key={route.name}
-                  path={route.path}
-                  element={route.component}
-                />
-              );
-            })}
-          </Routes>
-        </ScrollToTop>
-      </Router>
+      <HelmetProvider>
+        <Router>
+          <ScrollToTop>
+            <Routes>
+              {routeConfiguration().map((route) => {
+                return (
+                  <Route
+                    key={route.name}
+                    path={route.path}
+                    element={route.component}
+                  />
+                );
+              })}
+            </Routes>
+          </ScrollToTop>
+        </Router>
+      </HelmetProvider>
     </IntlProvider>
   );
 };

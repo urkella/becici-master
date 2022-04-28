@@ -1,5 +1,6 @@
 import React from "react";
 import { Page, Topbar, Footer } from "../../components";
+import { injectIntl } from "react-intl";
 import config from "../../config";
 
 import SectionHero from "./SectionHero";
@@ -8,8 +9,12 @@ import SectionCards from "./SectionCards";
 import SectionContact from "./SectionContact";
 import css from "./LandingPage.module.scss";
 
-const LandingPage = () => {
-  const schemaTitle = `Homepage | ${config.siteTitle}`;
+const LandingPage = (props) => {
+  const { intl } = props;
+  const schemaTitle = intl.formatMessage(
+    { id: "LandingPage.schemaTitle" },
+    { siteTitle: config.siteTitle }
+  );
   return (
     <Page title={schemaTitle}>
       <Topbar />
@@ -32,4 +37,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default injectIntl(LandingPage);

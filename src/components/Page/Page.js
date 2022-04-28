@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 import classNames from "classnames";
 import config from "../../config";
 import { metaTagProps } from "../../util/seo";
@@ -133,7 +133,7 @@ const Page = (props) => {
 
   return (
     <div className={classes}>
-      <HelmetProvider
+      <Helmet
         htmlAttributes={{
           lang: config.locale,
         }}
@@ -147,7 +147,7 @@ const Page = (props) => {
         <script id="page-schema" type="application/ld+json">
           {schemaArrayJSONString.replace(/</g, "\\u003c")}
         </script>
-      </HelmetProvider>
+      </Helmet>
       <div className={css.content}>{children}</div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { Image } from "../../components";
+import { Image, LanguageDropdown } from "../../components";
 import { FormattedMessage } from "react-intl";
 import classNames from "classnames";
 
@@ -72,6 +72,7 @@ const Footer = (props) => {
   return (
     <div className={classes}>
       <div className={css.content}>
+        <LanguageDropdown />
         <div className={css.icons}>
           <a href="https://facebook.com" target="_blank" rel="noreferrer">
             <IconFacebook />
