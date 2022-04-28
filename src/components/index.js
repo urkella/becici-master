@@ -6,3 +6,4 @@ export { default as Footer } from "./Footer/Footer";
 export { default as NamedLink } from "./NamedLink/NamedLink";
 export { default as IconArrowHead } from "./IconArrowHead/IconArrowHead";
 export { default as ScrollToTop } from "./ScrollToTop/ScrollToTop";
+export { default as LanguageDropdown } from "./LanguageDropdown/LanguageDropdown";

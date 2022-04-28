@@ -40,6 +40,17 @@
   border-radius: 2px;
 }
 
+.navigationAndLanguage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    width: auto;
+  }
+}
+
 .navigation {
   display: flex;
   align-items: center;
