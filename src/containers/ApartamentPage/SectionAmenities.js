@@ -1,4 +1,5 @@
 import React from "react";
+import { FormattedMessage, injectIntl } from "react-intl";
 import {
   IconParking,
   IconWiFi,
@@ -19,20 +20,41 @@ export const amenityCard = (text, icon) => {
   );
 };
 
-const SectionAmenities = () => {
+const SectionAmenities = (props) => {
+  const { intl } = props;
   return (
     <div className={css.sectionAmenities}>
-      <h2 className={css.amenitiesTitle}>Amenities</h2>
+      <h2 className={css.amenitiesTitle}>
+        <FormattedMessage id="SectionAmenities.title" />
+      </h2>
       <div className={css.amenities}>
-        {amenityCard("Free car parking", <IconParking />)}
-        {amenityCard("Free to use Wi-Fi", <IconWiFi />)}
-        {amenityCard("Airport transport", <IconBus />)}
-        {amenityCard("Air conditioner", <IconAirconditioner />)}
-        {amenityCard("Unbeatable prices", <IconCash />)}
-        {amenityCard("Online reservations", <IconReserve />)}
+        {amenityCard(
+          intl.formatMessage({ id: "SectionAmenities.parking" }),
+          <IconParking />
+        )}
+        {amenityCard(
+          intl.formatMessage({ id: "SectionAmenities.wifi" }),
+          <IconWiFi />
+        )}
+        {amenityCard(
+          intl.formatMessage({ id: "SectionAmenities.airport" }),
+          <IconBus />
+        )}
+        {amenityCard(
+          intl.formatMessage({ id: "SectionAmenities.air" }),
+          <IconAirconditioner />
+        )}
+        {amenityCard(
+          intl.formatMessage({ id: "SectionAmenities.parking" }),
+          <IconCash />
+        )}
+        {amenityCard(
+          intl.formatMessage({ id: "SectionAmenities.reservations" }),
+          <IconReserve />
+        )}
       </div>
     </div>
   );
 };
 
-export default SectionAmenities;
+export default injectIntl(SectionAmenities);

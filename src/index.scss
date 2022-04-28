@@ -130,3 +130,12 @@ p {
     margin-bottom: 16px;
   }
 }
+
+.languageDropdown {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  top: 1px;
+  padding: 0 24px;
+}

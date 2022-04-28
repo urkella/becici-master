@@ -1,5 +1,6 @@
 import React from "react";
 import { Image } from "../../components";
+import { FormattedMessage } from "react-intl";
 import classNames from "classnames";
 
 import css from "./Footer.module.scss";
@@ -84,16 +85,24 @@ const Footer = (props) => {
         </div>
         <ul className={css.links}>
           <li>
-            <a href="#home">Home</a>
+            <a href="#home">
+              <FormattedMessage id="Footer.home" />
+            </a>
           </li>
           <li>
-            <a href="#cards">Apartaments</a>
+            <a href="#cards">
+              <FormattedMessage id="Footer.apartments" />
+            </a>
           </li>
           <li>
-            <a href="#amenities">Amenities</a>
+            <a href="#amenities">
+              <FormattedMessage id="Footer.amenities" />
+            </a>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <a href="#contact">
+              <FormattedMessage id="Footer.contact" />
+            </a>
           </li>
         </ul>
         <div className={css.reviews}>
@@ -118,7 +127,7 @@ const Footer = (props) => {
             />
           </a>
         </div>
-        <p className={css.copyright}>Apartaments Tomić © All Rights Reserved</p>
+        <p className={css.copyright}>Apartments Tomić © All Rights Reserved</p>
       </div>
     </div>
   );

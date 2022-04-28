@@ -1,6 +1,7 @@
 // If you want to change the language, remember to also change the
 // locale data and the messages in the app.js file.
-const locale = "en";
+const localeFromLocaleStorage = localStorage.getItem("language");
+const locale = localeFromLocaleStorage ? localeFromLocaleStorage : "en";
 
 // Address information is used in SEO schema for Organization (http://schema.org/PostalAddress)
 const addressCountry = "ME";

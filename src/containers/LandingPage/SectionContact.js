@@ -68,7 +68,7 @@ const SectionContact = () => {
             <h3>Email</h3>
           </div>
           <div className={css.contactEmail}>
-            <a href="mailto:info@apartamentstomic.me">
+            <a href="mailto:info@apartmentstomic.me">
               apartmentstomicbecici@gmail.com
             </a>
           </div>
