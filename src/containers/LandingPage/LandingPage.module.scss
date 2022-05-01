@@ -339,7 +339,6 @@
 
 .contactRow {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 
   flex-direction: column;
@@ -354,10 +353,19 @@
 
   @media (min-width: 768px) {
     flex-direction: row;
+    align-items: center;
   }
 
   & a {
     color: var(--siteColor);
+  }
+}
+
+.contactRowItem {
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
 }
 

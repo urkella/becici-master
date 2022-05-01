@@ -40,7 +40,9 @@ const Topbar = (props) => {
               </a>
             </li>
           </ul>
-          <LanguageDropdown />
+          <LanguageDropdown
+            dropdownLabelClassName={css.dropdownLabelClassName}
+          />
         </div>
       </div>
     </div>

@@ -1,31 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import config from "../../config";
 import languages from "../../util/languages";
+import classNames from "classnames";
 
 import css from "./LanguageDropdown.module.scss";
 
 const handleLanguageChange = (lang) => {
+  console.log(lang);
   if (lang) {
     localStorage.setItem("language", lang);
     window.location.reload();
   }
 };
 
-const LanguageDropdown = () => {
+const LanguageDropdown = (props) => {
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  const { rootClassName, className, dropdownLabelClassName } = props;
+  const classes = classNames(rootClassName || css.root, className);
+
+  const currentLanguage = languages.find((l) => l.code === config.locale);
   return (
-    <div className={css.languageDropdown}>
-      <select
-        onChange={(e) => handleLanguageChange(e.target.value)}
-        value={config.locale}
-      >
-        {languages.map((l) => {
-          return (
-            <option key={l.code} value={l.code}>
-              {l.flat} {l.name}
-            </option>
-          );
+    <div className={classes}>
+      <div
+        className={classNames(css.dropdownLabel, dropdownLabelClassName, {
+          [css.dropdownLabelActive]: isDropdownOpen,
         })}
-      </select>
+        onClick={() => {
+          if (isDropdownOpen) {
+            setDropdownOpen(false);
+          } else {
+            setDropdownOpen(true);
+          }
+        }}
+      >
+        <img
+          className={css.dropdownImage}
+          src={currentLanguage.flagSrc}
+          alt={currentLanguage.name}
+        />
+      </div>
+      {isDropdownOpen ? (
+        <div className={css.dropdownContent}>
+          {languages.map((l) => {
+            return (
+              <div
+                key={l.code}
+                className={css.dropdownItem}
+                onClick={() => handleLanguageChange(l.code)}
+              >
+                <img
+                  className={css.dropdownItemImage}
+                  src={l.flagSrc}
+                  alt={l.name}
+                />
+                <span className={css.dropdownItemHeading}>{l.name}</span>
+              </div>
+            );
+          })}
+        </div>
+      ) : null}
     </div>
   );
 };

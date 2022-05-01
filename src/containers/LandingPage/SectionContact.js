@@ -63,7 +63,7 @@ const SectionContact = () => {
     <div className={css.sectionContact}>
       <div className={css.contactInfo}>
         <div className={css.contactRow}>
-          <div>
+          <div className={css.contactRowItem}>
             <IconEmail />
             <h3>Email</h3>
           </div>
@@ -74,7 +74,7 @@ const SectionContact = () => {
           </div>
         </div>
         <div className={css.contactRow}>
-          <div>
+          <div className={css.contactRowItem}>
             <IconPhone />
             <h3>Phone</h3>
           </div>
