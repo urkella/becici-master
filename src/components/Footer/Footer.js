@@ -72,7 +72,7 @@ const Footer = (props) => {
   return (
     <div className={classes}>
       <div className={css.content}>
-        <LanguageDropdown />
+        <LanguageDropdown className={css.footerDropdown} />
         <div className={css.icons}>
           <a href="https://facebook.com" target="_blank" rel="noreferrer">
             <IconFacebook />
