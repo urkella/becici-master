@@ -55,11 +55,18 @@ const SectionHero = (props) => {
       </div>
       <div className={css.heroImageContainer}>
         <img className={css.heroImage} src={bgImage} alt="Becici" />
-        <img
-          className={css.reviewImage}
-          src={bookingReviewImage}
-          alt="Booking"
-        />
+        <a
+          className={css.bookingReviewLink}
+          href="https://www.booking.com/hotel/me/apartments-tomic.sr.html#tab-reviews"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            className={css.reviewImage}
+            src={bookingReviewImage}
+            alt="Booking"
+          />
+        </a>
       </div>
     </div>
   );
