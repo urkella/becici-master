@@ -98,6 +98,7 @@
   /* Font */
   font-size: 14px;
   font-weight: var(--fontWeightRegular);
+  text-transform: capitalize;
 
   /* Style */
   background-color: var(--matterColorLight);
@@ -207,6 +208,7 @@
 .cardTitle {
   margin: 0 0 12px;
   color: var(--matterColor);
+  text-transform: capitalize;
 }
 
 .cardText {
@@ -335,7 +337,7 @@
   justify-content: space-between;
 
   flex-direction: column;
-  gap: 24px;
+  gap: 12px;
 
   padding: 24px;
   background-color: var(--matterColorLight);
@@ -347,10 +349,17 @@
   @media (min-width: 768px) {
     flex-direction: row;
     align-items: center;
+
+    gap: 24px;
   }
 
   & a {
     color: var(--siteColor);
+    font-size: 15px;
+
+    @media (min-width: 768px) {
+      font-size: 16px;
+    }
   }
 }
 
