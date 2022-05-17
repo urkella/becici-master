@@ -371,10 +371,15 @@
   }
 }
 
-.contactEmail {
+.contactEmail,
+.contactPhone {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.contactPhone {
+  gap: 6px;
 }
 
 .contactIcon {

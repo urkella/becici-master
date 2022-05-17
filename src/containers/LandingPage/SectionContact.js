@@ -78,8 +78,9 @@ const SectionContact = () => {
             <IconPhone />
             <h3>Phone</h3>
           </div>
-          <div className={css.contactEmail}>
+          <div className={css.contactPhone}>
             <a href="tel:+382 69 431 017">+382 69 431 017</a>
+            <a href="tel:+382 69 478 377">+382 69 478 377</a>
           </div>
         </div>
       </div>
